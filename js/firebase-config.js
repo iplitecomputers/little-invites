@@ -6,6 +6,6 @@
 // Keep the quotation marks.
 // =========================================================
 window.LI_FIREBASE = {
-    projectId: "AIzaSyBqsVVxcTZy540siTAp1UScBm_tEO4XSD0",
-    apiKey:    "little-invites"
+    projectId: "little-invites",
+    apiKey:    "AIzaSyBqsVVxcTZy540siTAp1UScBm_tEO4XSD0"
 };
