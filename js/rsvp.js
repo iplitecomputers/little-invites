@@ -24,7 +24,10 @@
     }
 
     function hostPhone() {
-        var raw = new URLSearchParams(window.location.search).get("phone") || "";
+        // Short links: number comes from the saved invitation (invite-loader.js).
+        // Old long links: number comes from ?phone= in the address.
+        var raw = (window.LI_INVITE && window.LI_INVITE.phone) ||
+                  new URLSearchParams(window.location.search).get("phone") || "";
         return raw.replace(/\D/g, "").replace(/^00/, "");
     }
 
