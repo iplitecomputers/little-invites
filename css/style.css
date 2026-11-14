@@ -1,0 +1,901 @@
+:root {
+    /* Original Little Invites palette (still used by the Admin Studio) */
+    --ink: #20232b;
+    --night: #171b24;
+    --cream: #f7f2e9;
+    --paper: #fffdf8;
+    --gold: #c6a66b;
+    --gold-light: #e6d2a7;
+    --muted: #a9a49a;
+
+    --serif: Georgia, "Times New Roman", serif;
+    --sans: Arial, Helvetica, sans-serif;
+
+    /* Little A's Creation palette (invitation page) */
+    --pink: #ff5fa2;
+    --magenta: #d4177b;
+    --orange: #f5a62b;
+    --coral: #e5532b;
+    --purple: #8b6cf6;
+    --cyan: #4fe3e0;
+    --teal: #0b8f82;
+    --blue: #4b7fb0;
+    --leaf: #8fb96f;
+    --sun: #f4b323;
+    --salmon: #f58b8b;
+    --red: #e03a1e;
+
+    --plum: #2d2540;
+    --plum-soft: #6f6584;
+    --warm-white: #fffaf4;
+
+    --display: "Baloo 2", "Fredoka", "Nunito", "Trebuchet MS", Arial, sans-serif;
+    --text: "Nunito", "Segoe UI", Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--sans);
+}
+
+/* =================================
+   ADMIN PAGE BACKGROUND (dark, unchanged)
+================================= */
+
+.admin-page {
+    min-height: 100vh;
+    color: var(--cream);
+
+    background:
+        radial-gradient(
+            ellipse at 50% 25%,
+            #303644 0%,
+            var(--night) 58%,
+            #10131a 100%
+        );
+}
+
+/* =================================
+   INVITATION PAGE BACKGROUND (light)
+   Soft colour blobs borrowed from the Little A's Creation logo
+================================= */
+
+.invite-page {
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    color: var(--plum);
+    font-family: var(--text);
+
+    background:
+        radial-gradient(circle at 10% 6%,  rgba(255, 95, 162, 0.20), transparent 38%),
+        radial-gradient(circle at 94% 12%, rgba(245, 166, 43, 0.24), transparent 36%),
+        radial-gradient(circle at 88% 90%, rgba(79, 227, 224, 0.24), transparent 40%),
+        radial-gradient(circle at 6% 92%,  rgba(139, 108, 246, 0.18), transparent 38%),
+        var(--warm-white);
+}
+
+/* Two decorative dots, like the ones around the logo */
+
+.invite-page::before,
+.invite-page::after {
+    content: "";
+    position: fixed;
+    z-index: -1;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.invite-page::before {
+    width: 64px;
+    height: 64px;
+    top: 9%;
+    left: 7%;
+    background: linear-gradient(135deg, #ec6a35, #f5a62b);
+}
+
+.invite-page::after {
+    width: 40px;
+    height: 40px;
+    right: 8%;
+    bottom: 14%;
+    background: linear-gradient(135deg, #8b6cf6, #4fe3e0);
+}
+
+/* Visible keyboard focus on the invitation page */
+
+.invite-page :focus-visible {
+    outline: 3px solid var(--purple);
+    outline-offset: 3px;
+}
+
+/* =================================
+   MAIN INVITATION LAYOUT
+================================= */
+
+.invite-shell {
+    width: min(100% - 32px, 760px);
+    margin: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 38px 0 24px;
+    text-align: center;
+}
+
+/* =================================
+   SHARED TEXT STYLES (used by Admin Studio)
+================================= */
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    font-weight: 700;
+    margin: 0 0 12px;
+}
+
+.brand {
+    font: 700 clamp(2rem, 7vw, 3rem)/1 var(--display);
+    letter-spacing: 0.02em;
+    margin: 0;
+    color: var(--cream);
+}
+
+.brand span {
+    color: var(--gold-light);
+    font-style: italic;
+}
+
+/* =================================
+   INVITATION HEADER: MASCOT + WORDMARK
+================================= */
+
+.invite-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+
+    text-align: left;
+}
+
+.mascot {
+    width: 76px;
+    height: 76px;
+    flex: none;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 3px solid #fff;
+    box-shadow:
+        0 0 0 3px var(--pink),
+        0 10px 22px rgba(212, 23, 123, 0.25);
+}
+
+.invite-page .eyebrow {
+    color: var(--magenta);
+    font: 600 0.9rem/1.2 var(--display);
+    letter-spacing: 0.01em;
+    margin: 0 0 4px;
+}
+
+.invite-page .brand {
+    font: 700 clamp(1.7rem, 7vw, 3rem)/1 var(--display);
+    letter-spacing: 0.02em;
+    color: var(--plum);
+}
+
+.invite-page .brand span {
+    font-style: normal;
+}
+
+.invite-page .brand .c1 { color: var(--teal); }
+.invite-page .brand .c2 { color: var(--sun); }
+.invite-page .brand .c3 { color: var(--blue); }
+.invite-page .brand .c4 { color: var(--leaf); }
+.invite-page .brand .c5 { color: var(--salmon); }
+.invite-page .brand .c6 { color: var(--red); }
+
+.invite-page .brand .gap {
+    display: inline-block;
+    width: 0.28em;
+}
+
+/* =================================
+   ENVELOPE
+   Stacking order (low to high):
+   back (1) < letter (2) < front (3) < flap (4) < seal (5)
+   When open: flap drops to 1, then letter jumps to 6 after it has slid out.
+================================= */
+
+.envelope-stage {
+    width: min(100%, 560px);
+    height: 360px;
+
+    display: grid;
+    place-items: center;
+
+    margin: 18px auto 8px;
+
+    overflow: visible;
+
+    transition: margin-bottom 0.6s ease;
+}
+
+.envelope {
+    position: relative;
+
+    width: min(88vw, 440px);
+    height: 250px;
+
+    /* perspective lives here (no preserve-3d) so z-index ordering stays reliable */
+    perspective: 900px;
+}
+
+/* Envelope back */
+
+.envelope-back {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background: #f5c3aa;
+    border-radius: 6px;
+
+    box-shadow: 0 22px 40px rgba(212, 23, 123, 0.18);
+}
+
+/* =================================
+   INVITATION LETTER
+   Closed: shorter than the envelope and clipped, so it is fully hidden inside.
+================================= */
+
+.letter {
+    position: absolute;
+    z-index: 2;              /* between envelope-back and envelope-front */
+
+    left: 5%;
+    top: 5%;
+
+    width: 90%;
+    max-height: 190px;       /* fits inside the closed envelope */
+    overflow: hidden;
+
+    padding: 26px 24px 20px;
+
+    background: #fff;
+    color: var(--plum);
+
+    border: 1px solid #f3e3da;
+    border-radius: 6px;
+    box-shadow: 0 6px 24px rgba(111, 101, 132, 0.22);
+
+    transform: translateY(0);
+
+    /* closing: slide back down first, drop behind the pocket immediately */
+    transition:
+        transform 0.8s cubic-bezier(.2, .75, .2, 1),
+        max-height 0.8s ease,
+        z-index 0s linear 0s;
+}
+
+/* Colourful top edge, echoing the logo */
+
+.letter::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 6px;
+
+    background: linear-gradient(
+        90deg,
+        var(--pink),
+        var(--orange),
+        var(--sun),
+        var(--cyan),
+        var(--purple)
+    );
+}
+
+.letter-kicker {
+    color: var(--magenta);
+    font: 600 0.95rem/1.2 var(--display);
+    letter-spacing: 0.01em;
+    margin: 0;
+}
+
+.letter h2 {
+    font: 500 clamp(1.45rem, 5.5vw, 2rem)/1.15 var(--display);
+    color: var(--plum);
+    margin: 8px 0 0;
+}
+
+.color-rule {
+    width: 56px;
+    height: 4px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--pink), var(--orange));
+    margin: 12px auto;
+}
+
+.guest-line {
+    font: 600 1rem/1.5 var(--text);
+    margin: 0 0 6px;
+}
+
+.letter-message {
+    font: 400 0.95rem/1.55 var(--text);
+    color: var(--plum);
+    margin: 0;
+}
+
+.event-date {
+    font: 500 1.05rem/1.3 var(--display);
+    color: var(--magenta);
+    margin: 14px 0 2px;
+}
+
+.event-venue {
+    font: 600 0.9rem/1.4 var(--text);
+    color: var(--plum-soft);
+    margin: 2px 0;
+}
+
+.map-link {
+    display: inline-block;
+    color: #087568;
+    font: 700 0.85rem var(--text);
+    margin-top: 6px;
+}
+
+/* =================================
+   RSVP BUTTONS
+================================= */
+
+.letter-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    margin-top: 14px;
+}
+
+.small-note {
+    color: var(--plum-soft);
+    font: italic 0.85rem var(--text);
+    margin: 14px 0 0;
+}
+
+/* =================================
+   ENVELOPE FRONT (pocket)
+================================= */
+
+.envelope-front {
+    position: absolute;
+    z-index: 3;
+    inset: 0;
+
+    background: linear-gradient(
+        145deg,
+        #ffe6d5,
+        #ffc7ad
+    );
+
+    clip-path: polygon(
+        0 0,
+        50% 58%,
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+
+    border-radius: 4px;
+}
+
+/* =================================
+   ENVELOPE FLAP
+================================= */
+
+.envelope-flap {
+    position: absolute;
+    z-index: 4;
+    inset: 0;
+
+    background: linear-gradient(
+        145deg,
+        #fff3e8,
+        #ffc2a8
+    );
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        50% 63%
+    );
+
+    transform-origin: top;
+
+    /* z-index drops behind the letter halfway through the flip */
+    transition:
+        transform 0.85s ease,
+        z-index 0s linear 0.4s;
+}
+
+/* =================================
+   WAX SEAL (pink, from the logo)
+================================= */
+
+.wax-seal {
+    position: absolute;
+    z-index: 5;
+
+    left: 50%;
+    top: 52%;
+
+    transform: translate(-50%, -50%);
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    display: grid;
+    place-items: center;
+
+    color: #fff;
+
+    background: radial-gradient(
+        circle at 35% 30%,
+        #ff8cc0,
+        #d4177b 75%
+    );
+
+    border: 2px solid #ffd0e6;
+
+    font: 600 1.4rem var(--display);
+
+    box-shadow:
+        0 3px 10px rgba(212, 23, 123, 0.4),
+        0 0 0 0 rgba(255, 95, 162, 0.45);
+
+    transition:
+        opacity 0.35s,
+        transform 0.35s;
+
+    cursor: pointer;
+
+    /* gentle pulse so guests know to tap it */
+    animation: sealPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes sealPulse {
+    0%, 100% {
+        box-shadow:
+            0 3px 10px rgba(212, 23, 123, 0.4),
+            0 0 0 0 rgba(255, 95, 162, 0.45);
+    }
+    50% {
+        box-shadow:
+            0 3px 10px rgba(212, 23, 123, 0.4),
+            0 0 0 12px rgba(255, 95, 162, 0);
+    }
+}
+
+/* =================================
+   OPEN ENVELOPE ANIMATION
+   1. Seal fades, flap flips open (0 - 0.85s)
+   2. Letter slides UP from inside the pocket (starts 0.45s), still behind the front
+   3. After it has cleared the pocket (1.5s) it moves in front so the buttons are usable
+================================= */
+
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.envelope.open .wax-seal {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+    pointer-events: none;
+    animation: none;
+}
+
+.envelope.open .letter {
+    max-height: 640px;
+    transform: translateY(-210px);
+    z-index: 6;
+
+    transition:
+        transform 1s cubic-bezier(.2, .75, .2, 1) 0.45s,
+        max-height 1s ease 0.45s,
+        z-index 0s linear 1.5s;
+}
+
+/* Give the opened invitation room */
+
+.invite-page.is-open .envelope-stage {
+    margin-bottom: 225px;
+}
+
+/* =================================
+   BUTTONS
+================================= */
+
+.button {
+    border: 0;
+    border-radius: 3px;
+
+    padding: 13px 22px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+
+    font: 700 0.75rem var(--sans);
+    letter-spacing: 0.06em;
+
+    cursor: pointer;
+
+    transition: transform 0.2s;
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+.button-gold {
+    color: #201d18;
+
+    background: linear-gradient(
+        135deg,
+        #ead8ae,
+        #bd9a5d
+    );
+}
+
+.button-outline {
+    color: var(--gold-light);
+    border: 1px solid #9c8150;
+    background: transparent;
+}
+
+.button-wide {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.text-link {
+    color: var(--gold-light);
+    font-size: 0.78rem;
+
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* Invitation page versions of the buttons and links */
+
+.invite-page .button {
+    min-height: 44px;
+    padding: 12px 26px;
+
+    border-radius: 999px;
+
+    font: 600 0.95rem var(--display);
+    letter-spacing: 0.02em;
+}
+
+.invite-page .button-gold {
+    color: #fff;
+
+    background: linear-gradient(
+        135deg,
+        #d4177b,
+        #e5532b
+    );
+
+    box-shadow: 0 6px 16px rgba(212, 23, 123, 0.28);
+}
+
+.invite-page .button-outline {
+    color: var(--magenta);
+    border: 2px solid var(--pink);
+    background: #fff;
+
+    box-shadow: 0 6px 16px rgba(212, 23, 123, 0.12);
+}
+
+.invite-page .button-outline:hover {
+    background: #fff0f7;
+}
+
+.invite-page .text-link {
+    color: var(--plum-soft);
+    font: 600 0.85rem var(--text);
+    padding: 6px 4px;
+}
+
+/* =================================
+   FOOTER AND MESSAGES
+================================= */
+
+.hint,
+.footer-note {
+    color: var(--muted);
+    font-size: 0.75rem;
+}
+
+.footer-note {
+    margin-top: 25px;
+}
+
+.invite-page .hint,
+.invite-page .footer-note {
+    color: var(--plum-soft);
+    font: 600 0.9rem var(--text);
+}
+
+.invite-page .footer-note {
+    margin: 25px 0 6px;
+    font-size: 0.85rem;
+}
+
+/* Powered by Little A's Creation */
+
+.powered-by {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.powered-label {
+    margin: 0;
+    color: var(--plum-soft);
+    font: 500 0.85rem var(--display);
+}
+
+.powered-logo {
+    width: 132px;
+    height: auto;
+
+    /* the logo has a white background; multiply lets the page colour show through */
+    mix-blend-mode: multiply;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* =================================
+   ADMIN PAGE
+================================= */
+
+.admin-shell {
+    width: min(100% - 32px, 900px);
+    margin: auto;
+    padding: 34px 0 50px;
+}
+
+.admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    padding-bottom: 24px;
+    border-bottom: 1px solid #ffffff20;
+}
+
+.admin-intro {
+    max-width: 620px;
+    padding: 38px 0 24px;
+}
+
+.admin-intro h2 {
+    font: 700 clamp(1.8rem, 5vw, 2.6rem)/1.12 var(--display);
+    margin: 0 0 10px;
+}
+
+.admin-intro > p:last-child {
+    color: #c1bdb5;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+/* =================================
+   ADMIN FORM
+================================= */
+
+.form-card {
+    padding: clamp(18px, 4vw, 32px);
+
+    background: #fffdf8;
+    color: var(--ink);
+
+    border-radius: 7px;
+
+    box-shadow: 0 18px 55px #0003;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form-grid label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: #514b40;
+}
+
+.form-grid input,
+.form-grid textarea,
+.link-row input {
+    width: 100%;
+
+    border: 1px solid #ded6c8;
+    border-radius: 3px;
+
+    background: #fff;
+    padding: 12px;
+
+    color: var(--ink);
+    font: 0.88rem var(--sans);
+
+    outline-color: var(--gold);
+}
+
+.form-grid textarea {
+    resize: vertical;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+/* =================================
+   GENERATED INVITATION LINK
+================================= */
+
+.generated {
+    margin-top: 26px;
+    padding-top: 22px;
+    border-top: 1px solid #e6dfd4;
+}
+
+.generated .eyebrow {
+    color: #92703c;
+}
+
+.generated-note {
+    color: #716b61;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+.link-row {
+    display: flex;
+    gap: 8px;
+}
+
+.link-row input {
+    min-width: 0;
+    font-size: 0.76rem;
+}
+
+.generated-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    margin-top: 14px;
+    flex-wrap: wrap;
+}
+
+.copy-status {
+    color: #55734d;
+    font-size: 0.78rem;
+}
+
+.admin-disclaimer {
+    color: #b7b2a8;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    margin-top: 18px;
+}
+
+/* =================================
+   MOBILE RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 600px) {
+
+    .invite-page::before {
+        width: 44px;
+        height: 44px;
+        top: 4%;
+        left: 4%;
+    }
+
+    .invite-page::after {
+        width: 30px;
+        height: 30px;
+        right: 5%;
+        bottom: 6%;
+    }
+
+    .mascot {
+        width: 64px;
+        height: 64px;
+    }
+
+    .envelope-stage {
+        height: 330px;
+    }
+
+    .envelope {
+        height: 215px;
+    }
+
+    .letter {
+        max-height: 160px;   /* stays inside the shorter mobile envelope */
+        padding: 22px 16px 16px;
+    }
+
+    .envelope.open .letter {
+        max-height: 640px;
+        transform: translateY(-190px);
+    }
+
+    .invite-page.is-open .envelope-stage {
+        margin-bottom: 215px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .admin-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .link-row {
+        flex-direction: column;
+    }
+}
+
+/* =================================
+   REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .wax-seal {
+        animation: none;
+    }
+}

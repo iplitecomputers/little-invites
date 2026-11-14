@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fffaf4">
+
+    <title>Little Invites | Admin Studio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Admin page has its own stylesheet so index.html and style.css stay untouched -->
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body class="admin-page">
+
+    <main class="admin-shell">
+
+        <!-- Header -->
+        <header class="admin-header">
+
+            <div class="admin-header-text">
+                <p class="eyebrow">Your creative workspace</p>
+
+                <h1 class="brand" aria-label="Little Invites">
+                    <span aria-hidden="true">
+                        <span class="c1">L</span><span class="c2">i</span><span class="c3">t</span><span class="c4">t</span><span class="c5">l</span><span class="c6">e</span><span class="gap"></span><span class="c1">I</span><span class="c2">n</span><span class="c3">v</span><span class="c4">i</span><span class="c5">t</span><span class="c6">e</span><span class="c1">s</span>
+                    </span>
+                </h1>
+            </div>
+
+            <a class="text-link" href="index.html">View sample invitation ↗</a>
+
+        </header>
+
+
+        <div class="admin-layout">
+
+            <!-- Left: intro + guinea pig -->
+            <aside class="admin-side">
+
+                <div class="mascot-frame">
+                    <img class="mascot-big"
+                         src="images/mascot.jpg"
+                         alt="Little Invites mascot: a guinea pig in round glasses and a green cardigan"
+                         width="1376"
+                         height="768">
+                </div>
+
+                <div class="admin-intro">
+                    <p class="eyebrow">Invitation studio</p>
+
+                    <h2>Create a little moment to remember.</h2>
+
+                    <p>
+                        Enter the event details and generate a personalized
+                        preview link for your guest.
+                    </p>
+
+                    <div class="color-rule"></div>
+                </div>
+
+            </aside>
+
+
+            <!-- Right: form -->
+            <section class="form-card">
+
+                <form id="inviteForm">
+
+                    <div class="form-grid">
+
+                        <label>
+                            Guest's name
+                            <input id="guest" placeholder="e.g. John" required maxlength="60">
+                        </label>
+
+                        <label>
+                            Event title
+                            <input id="title" placeholder="e.g. Sarah &amp; James' Wedding" required maxlength="90">
+                        </label>
+
+                        <label>
+                            Event date and time
+                            <input id="date" placeholder="e.g. Saturday, 12 December 2026">
+                        </label>
+
+                        <label>
+                            Venue
+                            <input id="venue" placeholder="e.g. The Grand Ballroom">
+                        </label>
+
+                        <label class="full-width">
+                            Personal message
+                            <textarea id="message" rows="3" maxlength="240">It would mean so much to have you celebrate this special day with us.</textarea>
+                        </label>
+
+                        <label class="full-width">
+                            Google Maps link (optional)
+                            <input id="map" type="url" placeholder="https://maps.google.com/...">
+                        </label>
+
+                    </div>
+
+                    <button class="button button-gold button-wide" type="submit">
+                        Generate invitation link
+                    </button>
+
+                </form>
+
+
+                <div class="generated hidden" id="generated" aria-live="polite">
+
+                    <p class="eyebrow">Your invitation link</p>
+
+                    <p class="generated-note">
+                        Demo link: once the project is published,
+                        this will open the personalized invitation page.
+                    </p>
+
+                    <div class="link-row">
+                        <input id="generatedUrl" readonly aria-label="Generated invitation URL">
+
+                        <button class="button button-outline" id="copyButton" type="button">
+                            Copy
+                        </button>
+                    </div>
+
+                    <div class="generated-actions">
+                        <a class="button button-gold" id="previewLink" target="_blank" rel="noopener">
+                            Preview invitation
+                        </a>
+
+                        <span class="copy-status" id="copyStatus" role="status"></span>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <p class="admin-disclaimer">
+            Prototype only: details are placed in the URL for testing.
+            Do not include private information. Secure storage and
+            real RSVP tracking will come in a later stage.
+        </p>
+
+
+        <!-- Footer -->
+        <footer class="admin-footer">
+
+            <p class="footer-note">
+                Made with care by <strong>Little Invites</strong>
+            </p>
+
+            <div class="powered-by">
+
+                <p class="powered-label">Powered by Little A's Creation</p>
+
+                <div class="logo-crop">
+                    <img class="powered-logo"
+                         src="images/little-as-creation-logo.jpg"
+                         alt="Little A's Creation, Prints and Crafts"
+                         width="2048"
+                         height="2048"
+                         decoding="async">
+                </div>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+    <script src="js/admin.js"></script>
+
+</body>
+
+</html>

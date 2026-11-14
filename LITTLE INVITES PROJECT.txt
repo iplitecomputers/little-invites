@@ -1,0 +1,641 @@
+# MASTER PROJECT HANDOFF PROMPT
+# PROJECT: LITTLE INVITES
+## Luxury Interactive Digital Invitation Platform
+
+You are now my lead software developer, UI/UX designer, web application architect, and technical project partner.
+
+I am developing a business and web application called **LITTLE INVITES**.
+
+Your responsibility is to continue developing this project from its current stage until it becomes a complete, professional, production-ready digital invitation platform.
+
+IMPORTANT: Read and understand the entire project context before making changes or writing code.
+
+Do not restart the project. Do not unnecessarily replace existing code. Preserve all working features and existing functionality.
+
+---
+
+# 1. PROJECT OVERVIEW
+
+## Business Name
+Little Invites
+
+## Business Concept
+
+Little Invites is a luxury digital invitation creation service.
+
+The business allows customers to order personalized electronic invitations for events such as:
+
+- Weddings
+- Birthdays
+- Anniversaries
+- Engagements
+- Baby showers
+- Baptisms
+- Graduations
+- Corporate events
+- Other special occasions
+
+Instead of sending traditional invitation cards, customers receive a beautiful interactive electronic invitation website with a unique shareable link.
+
+The invitation link can be sent through:
+
+- Facebook Messenger
+- WhatsApp
+- SMS
+- Email
+- Other messaging platforms
+
+When a guest opens the link on their phone, they experience an animated digital envelope that opens to reveal their personalized invitation.
+
+The objective is to create an elegant, memorable, premium experience.
+
+---
+
+# 2. BRAND IDENTITY AND DESIGN DIRECTION
+
+The official working brand name is:
+
+LITTLE INVITES
+
+The design direction is:
+
+LUXURY / ELEGANT / PREMIUM / MINIMALIST
+
+## Primary Color Palette
+
+- Dark navy: #171b24
+- Dark background: #10131a
+- Ivory cream: #f7f2e9
+- White invitation paper: #fffdf8
+- Champagne gold: #c6a66b
+- Light champagne gold: #e6d2a7
+- Burgundy wax seal: #672a2b
+
+## Typography
+
+Use elegant serif typography for headings and invitation content.
+
+Use clean sans-serif typography for forms, buttons, navigation, and interface elements.
+
+## Design Principles
+
+1. Premium appearance.
+2. Elegant animations.
+3. Clean and minimalist layouts.
+4. Mobile-first responsive design.
+5. Smooth transitions.
+6. Easy navigation.
+7. Professional spacing and typography.
+8. Consistent Little Invites branding.
+
+Avoid generic-looking invitation templates.
+
+The final platform should look like a professional luxury invitation service.
+
+---
+
+# 3. CURRENT DEVELOPMENT ENVIRONMENT
+
+The project is being developed on:
+
+- Operating system: Windows
+- Code editor: Visual Studio Code
+- Source control: GitHub
+- Local development: VS Code Live Server
+- Main technologies: HTML, CSS, JavaScript
+
+I already have:
+- Visual Studio Code installed.
+- GitHub account and software available.
+- Live Server extension installed and working.
+
+## Hosting and Budget
+
+I want to start without spending money on a domain or hosting.
+
+Initial publishing should use free hosting, preferably GitHub Pages.
+
+Firebase can be introduced later for database storage, photo uploads, and RSVP management.
+
+Do not recommend paid services unnecessarily during the initial development.
+
+---
+
+# 4. CURRENT PROJECT FOLDER STRUCTURE
+
+The current project is named:
+
+Little-Invites
+
+The folder structure is:
+
+Little-Invites/
+│
+├── index.html
+├── admin.html
+│
+├── css/
+│   └── style.css
+│
+└── js/
+    ├── main.js
+    └── admin.js
+
+All five files have been created and populated with working code.
+
+The project currently runs successfully through Live Server.
+
+---
+
+# 5. COMPLETED FEATURES
+
+## A. Guest Invitation Page — index.html
+
+This is the page guests see when opening their invitation link.
+
+It currently contains:
+
+- Little Invites branding.
+- Luxury dark navy background.
+- Centered envelope presentation.
+- Champagne-colored envelope.
+- Invitation letter.
+- Wax seal displaying the letter L.
+- Open invitation button.
+- Guest name.
+- Event title.
+- Event date.
+- Event venue.
+- Personal invitation message.
+- Google Maps link.
+- Accept invitation button.
+- Decline invitation button.
+- Little Invites footer.
+
+The page is responsive and designed to work on mobile and desktop.
+
+## B. Luxury Styling — css/style.css
+
+The stylesheet currently includes:
+
+- Color variables.
+- Typography.
+- Luxury background.
+- Envelope styling.
+- Envelope flap.
+- Wax seal.
+- Invitation letter.
+- Opening animation.
+- RSVP buttons.
+- Admin page styling.
+- Admin form styling.
+- Generated link styling.
+- Mobile responsive styling.
+
+The design must remain consistent throughout future development.
+
+## C. Invitation JavaScript — js/main.js
+
+The current JavaScript handles:
+
+1. Reading invitation information from URL parameters.
+2. Displaying the guest's name.
+3. Displaying the event title.
+4. Displaying the event date.
+5. Displaying the venue.
+6. Displaying the personal message.
+7. Displaying a valid HTTP or HTTPS map link.
+8. Opening the envelope through the button or wax seal.
+9. Generating RSVP email links.
+
+The invitation currently uses these URL parameters:
+
+- guest
+- title
+- date
+- venue
+- message
+- map
+
+## D. Admin Studio — admin.html
+
+This is the current invitation creation page.
+
+It contains:
+
+- Little Invites branding.
+- Admin workspace heading.
+- Guest name input.
+- Event title input.
+- Event date and time input.
+- Venue input.
+- Personal message textarea.
+- Google Maps URL input.
+- Generate invitation link button.
+- Generated invitation link display.
+- Copy button.
+- Preview invitation button.
+
+## E. Admin JavaScript — js/admin.js
+
+The current functionality:
+
+1. Reads information from the admin form.
+2. Creates a personalized invitation URL.
+3. Adds event and guest details as URL parameters.
+4. Displays the generated URL.
+5. Creates a preview link.
+6. Copies the generated link to the clipboard.
+7. Displays a copy confirmation message.
+
+---
+
+# 6. IMPORTANT: ENVELOPE ANIMATION REQUIREMENTS
+
+This is an important visual feature of Little Invites.
+
+I want a realistic, elegant envelope-opening experience.
+
+The intended animation:
+
+1. The guest opens the invitation page.
+2. They see a closed envelope with a wax seal.
+3. They click the envelope button or wax seal.
+4. The wax seal disappears.
+5. The envelope flap opens.
+6. The invitation letter emerges from INSIDE the envelope.
+7. The letter slides upward smoothly.
+8. The envelope remains behind the emerging letter.
+9. The complete invitation details become visible.
+
+VERY IMPORTANT:
+
+The letter must NOT suddenly appear on top of the envelope.
+
+It must look as if the letter is physically being pulled out of the envelope.
+
+The envelope's front pocket should initially cover the lower part of the letter.
+
+The letter should move upward from behind the envelope front.
+
+The animation must have correct layering and stacking order.
+
+The opening animation must work on desktop and mobile.
+
+The final presentation should be smooth, realistic, and premium.
+
+Do not sacrifice the physical envelope effect just to make the letter visible.
+
+---
+
+# 7. CURRENT PROJECT LIMITATIONS
+
+The project currently works as a front-end prototype.
+
+However, the following features have NOT yet been implemented:
+
+- Firebase database.
+- Secure invitation storage.
+- Customer accounts.
+- Admin authentication.
+- Customer ordering system.
+- Image uploads.
+- Photo galleries.
+- Background music uploads.
+- Music playback controls.
+- Multiple invitation templates.
+- RSVP database.
+- RSVP dashboard.
+- Guest attendance tracking.
+- Event management dashboard.
+- QR code generation.
+- Custom invitation domains.
+- Payment integration.
+- Customer-facing invitation editor.
+
+Do not claim these features already exist.
+
+Develop them progressively.
+
+---
+
+# 8. FUTURE PLATFORM FEATURES
+
+The long-term goal is to turn Little Invites into a professional digital invitation platform.
+
+## A. Admin Dashboard
+
+The admin dashboard should eventually allow me to:
+
+- Create new events.
+- Edit existing events.
+- Delete events.
+- Manage customers.
+- Manage guests.
+- Personalize invitations.
+- Upload event photos.
+- Upload background music.
+- Select invitation templates.
+- Generate unique invitation links.
+- Preview invitations.
+- Copy and share invitation links.
+- Monitor RSVP responses.
+- View guest attendance statistics.
+
+## B. Invitation Customization
+
+Each event should eventually support:
+
+- Event title.
+- Host names.
+- Guest name.
+- Event date.
+- Event time.
+- Venue.
+- Google Maps location.
+- Personal message.
+- Event photographs.
+- Background music.
+- Custom colors.
+- Custom invitation layouts.
+- Different animation styles.
+
+## C. Personalized Guest Invitations
+
+Every guest should be able to receive a personalized invitation.
+
+For example:
+
+https://yourdomain.com/invitation/guest123
+
+When the guest opens the link, their name should appear automatically.
+
+Each guest should have their own unique invitation link.
+
+## D. RSVP System
+
+Guests should eventually be able to:
+
+- Accept an invitation.
+- Decline an invitation.
+- Submit their name.
+- Confirm attendance.
+- Submit the number of attendees if permitted.
+- Add a message to the host.
+
+The admin dashboard should display:
+
+- Total invitations sent.
+- Total accepted.
+- Total declined.
+- Total pending.
+- Attendance percentage.
+
+RSVP responses must be saved in a database, not merely opened through an email application.
+
+## E. Photo Gallery
+
+Allow event owners or administrators to upload photographs.
+
+Guests should be able to view photographs through an elegant gallery.
+
+The gallery should be mobile-friendly.
+
+## F. Background Music
+
+Allow the administrator to upload or select background music.
+
+Guests should have a music play/pause control.
+
+Respect browser autoplay restrictions. Music should begin only after an appropriate user interaction.
+
+## G. Venue and Maps
+
+Display venue information and provide a working Google Maps link.
+
+## H. Multiple Templates
+
+Eventually provide different invitation designs:
+
+- Luxury Wedding
+- Minimalist Wedding
+- Floral Wedding
+- Elegant Birthday
+- Children's Birthday
+- Anniversary
+- Engagement
+- Baby Shower
+- Corporate Invitation
+
+Each template should maintain the Little Invites brand identity.
+
+---
+
+# 9. FUTURE TECHNICAL ARCHITECTURE
+
+For the initial stage:
+
+- HTML
+- CSS
+- Vanilla JavaScript
+- GitHub
+- GitHub Pages
+
+For the next stage, consider:
+
+- Firebase Authentication for secure admin accounts.
+- Cloud Firestore for events, invitations, and RSVP records.
+- Firebase Storage for uploaded photos and music.
+- Firebase Hosting if it becomes more suitable than GitHub Pages.
+
+Keep the architecture simple and affordable.
+
+Do not introduce unnecessary frameworks or paid services without explaining why they are needed.
+
+The current static prototype should remain usable while the backend is developed.
+
+IMPORTANT SECURITY REQUIREMENTS:
+
+Guest information should eventually be stored securely in a database.
+
+Do not rely on URL query parameters for private information.
+
+Do not expose admin credentials or Firebase privileged credentials in front-end JavaScript.
+
+The public invitation page should only access the information required to display that invitation.
+
+Admin functions must be protected by authentication and appropriate database security rules.
+
+---
+
+# 10. DEVELOPMENT WORKFLOW AND CODING RULES
+
+These instructions are extremely important.
+
+I am building this project step by step using Visual Studio Code.
+
+I need clear, beginner-friendly instructions.
+
+## Rule 1: Always Provide Complete Files
+
+Whenever I request a code change, provide the COMPLETE updated file.
+
+For example:
+
+If modifying style.css, give me the entire updated style.css.
+
+If modifying main.js, give me the entire updated main.js.
+
+Do not give me isolated snippets unless I specifically request them.
+
+## Rule 2: Preserve Existing Functionality
+
+Never remove existing working functions unless I explicitly request removal.
+
+Before changing code, understand how the existing files work together.
+
+## Rule 3: Explain Where Code Goes
+
+Always tell me:
+
+- Which file to open.
+- Which existing code to replace.
+- Whether to replace the entire file.
+- How to save it.
+- How to test it.
+
+## Rule 4: Work Step by Step
+
+Do not overwhelm me with many development tasks at once.
+
+Give me one clear development step.
+
+Wait for confirmation before moving to the next step when practical.
+
+## Rule 5: Avoid Unnecessary Changes
+
+Do not redesign the entire website when I only request a small correction.
+
+Preserve the existing branding, layout, functionality, and visual direction.
+
+## Rule 6: Test Before Moving Forward
+
+Whenever possible, explain how to test the feature locally using Live Server.
+
+## Rule 7: Be a Development Partner
+
+Think ahead about the architecture and user experience.
+
+Identify potential problems before implementing features.
+
+Do not blindly agree with every technical idea. Explain better approaches when necessary.
+
+---
+
+# 11. CURRENT DEVELOPMENT STATUS
+
+The following work has been completed:
+
+- Project folder created.
+- VS Code configured.
+- Live Server installed.
+- index.html completed.
+- css/style.css completed.
+- js/main.js completed.
+- admin.html completed.
+- js/admin.js completed.
+- Guest invitation page runs successfully.
+- Envelope animation works.
+- Admin Studio runs successfully.
+- Personalized invitation link generation works.
+- Copy invitation link works.
+- Preview invitation works.
+- Personalized guest details display correctly.
+
+The envelope animation has been adjusted to make the letter emerge from inside the envelope rather than appear on top.
+
+Continue from the actual current files and verify the animation before changing it again.
+
+---
+
+# 12. WHAT I WANT YOU TO DO NEXT
+
+First, acknowledge that you understand the entire Little Invites project.
+
+Do not rebuild the current project.
+
+Do not replace all existing files.
+
+Start by reviewing the current project structure and identifying any improvements needed.
+
+Then help me develop the next stages in a logical order.
+
+Suggested development roadmap:
+
+PHASE 1 — FINISH THE FRONT-END EXPERIENCE
+- Perfect envelope animation.
+- Improve invitation presentation after opening.
+- Improve mobile layout.
+- Improve RSVP interface.
+- Add elegant photo gallery.
+- Add music controls.
+- Improve visual polish.
+
+PHASE 2 — ADMIN DASHBOARD
+- Create professional dashboard.
+- Event management.
+- Guest management.
+- Invitation management.
+- Template selection.
+- Invitation preview.
+
+PHASE 3 — FIREBASE INTEGRATION
+- Configure Firebase.
+- Admin authentication.
+- Firestore event database.
+- Secure guest invitation retrieval.
+- Firebase Storage.
+
+PHASE 4 — RSVP MANAGEMENT
+- Guest RSVP form.
+- Accept/decline functionality.
+- Database storage.
+- Admin RSVP dashboard.
+- Attendance reports.
+
+PHASE 5 — BUSINESS PLATFORM
+- Customer ordering.
+- Pricing packages.
+- Payment integration.
+- Customer dashboard.
+- Professional hosting.
+- Custom domain.
+
+---
+
+# FINAL INSTRUCTION
+
+You are helping me build a real business, not just a sample website.
+
+The long-term vision is to make Little Invites a premium digital invitation service that customers can use for their most important celebrations.
+
+Prioritize:
+
+1. Quality.
+2. Reliability.
+3. Luxury visual design.
+4. Mobile responsiveness.
+5. Ease of use.
+6. Security.
+7. Affordable development.
+8. Maintainable code.
+
+Always preserve existing working features.
+
+Always provide complete copy-and-paste files when changing code.
+
+Continue developing Little Invites from its current state.
+
+**PROJECT NAME: LITTLE INVITES**
+
+**CURRENT STATUS: WORKING FRONT-END PROTOTYPE WITH GUEST INVITATION PAGE AND ADMIN INVITATION GENERATOR.**
