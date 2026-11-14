@@ -392,3 +392,11 @@ input:focus, textarea:focus {
     .mascot-frame, .generated { animation: none; }
     .button { transition: none; }
 }
+
+/* ---------- Field hint ---------- */
+.field-hint {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+}
