@@ -151,17 +151,31 @@
     }
 
     // ---------- wire up the two buttons ----------
-    // Capture phase + stopImmediatePropagation so any older click
-    // handler in main.js can't interfere with these two buttons.
-    function intercept(btn, type) {
-        btn.addEventListener("click", function (e) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            showChoice(type);
-        }, true);
+    // main.js may have set these links to open email (mailto:) or another
+    // page. We (1) reset them to harmless "#" links, and (2) catch the click
+    // at the very top of the page (capture phase) so nothing else can run.
+    function neutralize(btn) {
+        btn.setAttribute("href", "#");
+        btn.removeAttribute("target");
+    }
+
+    function catchClicks(e) {
+        var type = null;
+        if (e.target.closest("#rsvpYes")) type = "yes";
+        else if (e.target.closest("#rsvpNo")) type = "no";
+        if (!type) return;
+
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        showChoice(type);
     }
 
     buildModal();
-    intercept(yesBtn, "yes");
-    intercept(noBtn, "no");
+    neutralize(yesBtn);
+    neutralize(noBtn);
+    // main.js may fill the links in after the page loads, so reset again
+    window.addEventListener("load", function () { neutralize(yesBtn); neutralize(noBtn); });
+    setTimeout(function () { neutralize(yesBtn); neutralize(noBtn); }, 500);
+
+    document.addEventListener("click", catchClicks, true);
 })();
