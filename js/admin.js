@@ -14,7 +14,8 @@ const PARAM_NAMES = {
     date:    "date",
     venue:   "venue",
     message: "message",
-    map:     "map"
+    map:     "map",
+    phone:   "phone"   // host WhatsApp number, used by js/rsvp.js
 };
 
 const form         = document.getElementById("inviteForm");
@@ -28,7 +29,14 @@ let statusTimer = null;
 
 function getValue(id) {
     const field = document.getElementById(id);
-    return field ? field.value.trim() : "";
+    if (!field) return "";
+    const value = field.value.trim();
+
+    // WhatsApp numbers: keep digits only, drop a leading 00
+    if (id === "phone") {
+        return value.replace(/\D/g, "").replace(/^00/, "");
+    }
+    return value;
 }
 
 function buildInvitationUrl() {
@@ -56,6 +64,15 @@ function showStatus(text) {
 
 form.addEventListener("submit", function (event) {
     event.preventDefault();
+
+    const phoneField = document.getElementById("phone");
+    const phoneDigits = getValue("phone");
+    if (phoneDigits.length < 8 || phoneDigits.length > 15) {
+        phoneField.setCustomValidity("Please enter the number with country code, digits only.");
+        phoneField.reportValidity();
+        return;
+    }
+    phoneField.setCustomValidity("");
 
     const finalUrl = buildInvitationUrl();
 
@@ -86,6 +103,11 @@ copyButton.addEventListener("click", async function () {
             showStatus("Press Ctrl+C to copy");
         }
     }
+});
+
+// Clear any validation message as soon as the host edits the number
+document.getElementById("phone").addEventListener("input", function (e) {
+    e.target.setCustomValidity("");
 });
 
 // Clicking the link box selects it, handy on phones
